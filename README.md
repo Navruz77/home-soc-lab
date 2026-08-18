@@ -30,7 +30,7 @@ Wazuh automatically ran a CIS Microsoft Windows Server 2022 Benchmark scan again
 ![Wazuh Dashboard](Wazuh%20Dashboard.png)
 
 ### Windows Agent Enrolled
-![Windows Agent Enrolled](Windows%20Agent%20Enrolled.png)
+![Windows Agent Enrolled]()
 
 ### Brute Force Detection Alerts
 ![Brute Force Alerts](Brute%20Force%20Alerts.png)
