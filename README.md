@@ -43,6 +43,29 @@ Wazuh automatically ran a CIS Microsoft Windows Server 2022 Benchmark scan again
 ### CIS Benchmark Assessment
 ![CIS Benchmark](CIS%20Benchmark.png)
 
+### Sysmon MITRE ATT&CK mapping
+![Sysmon MITRE ATT&CK mapping (T1087)](Sysmon%20MITRE%20ATT%26CK%20mapping%20(T1087)%201.png)
+![Sysmon MITRE ATT&CK mapping (T1087)](Sysmon%20MITRE%20ATT%26CK%20mapping%20(T1087)%202.png)
+![Sysmon MITRE ATT&CK mapping (T1087)](Sysmon%20MITRE%20ATT%26CK%20mapping%20(T1087)%203.png)
+
+### Privilege escalation detection (Rule 100002)
+![Privilege escalation detection](Privilege%20escalation%20detection%20(Rule%20100002)%20.png)
+
+### Domain Admins group changed alert
+![Domain Admins group](Domain%20Admins%20group%20changed%20alert%201.png)
+![Domain Admins group](Domain%20Admins%20group%20changed%20alert%202.png)
+![Domain Admins group](Domain%20Admins%20group%20changed%20alert%203.png)
+
+### IAM user lifecycle
+![IAM user lifecycle](IAM%20user%20lifecycle%201.png)
+![IAM user lifecycle](IAM%20user%20lifecycle%202.png)
+
+### Shuffle workflow canvas
+![Shuffle workflow](Shuffle%20workflow%20canvas.png)
+
+### VirusTotal status
+![VirusTotal status](VirusTotal%20status%201.png)
+![VirusTotal status](VirusTotal%20status%202.png)
 
 ## SOAR Integration
 Configured Wazuh to forward alerts with severity ≥10 to Shuffle SOAR 
