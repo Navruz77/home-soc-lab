@@ -5,8 +5,10 @@ A hands-on security operations home lab built on Microsoft Azure to simulate rea
 
 ## Architecture
 - **Wazuh Server** — Ubuntu 22.04 VM on Azure (North Central US)
-- **Windows Agent** — Windows Server 2022 VM enrolled as monitored endpoint
-- Both VMs deployed on the same Azure Virtual Network for agent-manager communication
+- **Windows Agent / Domain Controller** — Windows Server 2022, enrolled as Wazuh agent and promoted to Active Directory Domain Controller (corp.local)
+- **Shuffle SOAR** — Cloud-hosted automation platform receiving Wazuh webhooks
+- **VirusTotal API** — Threat intelligence enrichment for file hashes
+- Both VMs on same Azure Virtual Network (172.16.0.0/24)
 
 ## Tools Used
 - Wazuh SIEM 4.9.2
@@ -41,16 +43,24 @@ Wazuh automatically ran a CIS Microsoft Windows Server 2022 Benchmark scan again
 ### CIS Benchmark Assessment
 ![CIS Benchmark](CIS%20Benchmark.png)
 
-## In Progress
-- Sysmon integration for enriched Windows telemetry
-- Custom Wazuh detection rules mapped to MITRE ATT&CK framework
-- Active Directory Domain Controller deployment
-- AD attack simulation (Kerberoasting, AS-REP roasting)
-- Active response scripts for automated threat containment
+
+## SOAR Integration
+Configured Wazuh to forward alerts with severity ≥10 to Shuffle SOAR 
+via webhook. Shuffle automatically queries VirusTotal API for file 
+hash reputation, returning results from 75+ antivirus engines including 
+malware classification, sandbox verdicts, and threat labels.
 
 ## Key Concepts Demonstrated
-- SIEM deployment and agent enrollment
-- Windows Event Log correlation and brute force detection
+- SIEM deployment, agent enrollment, and log correlation
+- Windows Event Log and Sysmon telemetry analysis (Event ID 1, 4625, 4624)
+- Active Directory administration — users, security groups, OUs, RBAC
+- Identity and access management — full user lifecycle provisioning and deprovisioning
+- Group Policy Object deployment for domain-wide security hardening
+- Privilege escalation detection and custom XML rule authoring
+- MITRE ATT&CK framework mapping (T1078, T1087, T1098)
 - File integrity monitoring using cryptographic checksums
 - CIS Benchmark security configuration assessment
-- Azure cloud infrastructure (VMs, VNet, NSG configuration)
+- SOAR automation with webhook integration and API orchestration
+- VirusTotal API threat intelligence enrichment
+- Azure cloud infrastructure (VMs, VNet, NSG, outbound rules)
+- Password spraying and brute force attack simulation and detection
